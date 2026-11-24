@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -316,18 +317,18 @@
       gap: 6px;
     }
 
-    .btn-pill-gold {
+    .btn-pill-outline {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 7px 11px;
+      padding: 7px 14px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 55%, #B8860B 100%);
-      color: var(--burgundy-deep);
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--gold-main);
+      color: var(--gold-light);
       font-family: var(--font-heading);
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -1191,78 +1192,8 @@
     }
 
     /* ==========================================================================
-       10. HIDDEN EDIT EVENT DETAILS MODAL (#edit-modal) & TOAST
+       10. TOAST NOTIFICATION BANNER
     ========================================================================== */
-    #edit-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 10000;
-      background: rgba(18, 2, 5, 0.85);
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    #edit-modal.open {
-      display: flex;
-    }
-
-    .modal-box {
-      width: 100%;
-      max-width: 440px;
-      background: #FFFDF8;
-      border: 1.5px solid var(--gold-main);
-      border-radius: 20px;
-      padding: 20px 16px;
-      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.65);
-      max-height: 88vh;
-      overflow-y: auto;
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.45);
-      padding-bottom: 10px;
-      margin-bottom: 14px;
-    }
-
-    .modal-title {
-      font-family: var(--font-heading);
-      font-size: 0.96rem;
-      font-weight: 700;
-      color: var(--text-dark);
-    }
-
-    .form-group {
-      margin-bottom: 12px;
-      text-align: left;
-    }
-
-    .form-lbl {
-      display: block;
-      font-family: var(--font-heading);
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-
-    .form-ctrl {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 10px;
-      border: 1.5px solid rgba(166, 124, 30, 0.55);
-      background: #FFF9EE;
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      color: var(--text-dark);
-    }
-
     #toast-banner {
       position: fixed;
       bottom: 22px;
@@ -1342,12 +1273,6 @@
       <div class="top-bar-inner">
         <span class="brand-title">K &amp; U WEDDING</span>
         <div class="top-bar-btns">
-          <button type="button" class="btn-pill-gold" onclick="window.openEditModal()">
-            <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-            </svg>
-            <span>Edit Event Details</span>
-          </button>
           <button type="button" class="btn-pill-outline" onclick="window.resealInvitation()">
             <span>Seal View</span>
           </button>
@@ -1817,42 +1742,6 @@
     </div>
   </main>
 
-  <!-- =========================================================================
-       HIDDEN EDIT EVENT DETAILS MODAL (#edit-modal)
-  ========================================================================= -->
-  <div id="edit-modal" onclick="if(event.target===this) window.closeEditModal()">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3 class="modal-title">Edit Event Details</h3>
-        <button type="button" style="font-size: 1.3rem; color: #38070E; padding: 2px 8px;" onclick="window.closeEditModal()">&times;</button>
-      </div>
-
-      <form id="edit-form">
-        <div class="form-group">
-          <label class="form-lbl" for="input-hosts">Bride's Parents (Hosts)</label>
-          <input id="input-hosts" type="text" class="form-ctrl" value="Sri U. Venkateswara Rao & Smt. Padmavathi" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-lbl" for="input-groom-parents">Groom's Lineage</label>
-          <input id="input-groom-parents" type="text" class="form-ctrl" value="( Younger Son of (Late) Sri Ponnaganti Appala Swamy, (Late) Smt. Tripura Sundari of Visakhapatnam )" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-lbl" for="input-rec-dt">Reception Date &amp; Time (IST)</label>
-          <input id="input-rec-dt" type="datetime-local" class="form-ctrl" value="2026-12-02T19:00" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-lbl" for="input-muh-dt">Sumuhurtham Date &amp; Time (IST)</label>
-          <input id="input-muh-dt" type="datetime-local" class="form-ctrl" value="2026-12-03T04:45" />
-        </div>
-
-        <button type="submit" class="btn-calendar-gold">Save &amp; Update Invitation</button>
-      </form>
-    </div>
-  </div>
-
   <!-- Toast Notification Banner -->
   <div id="toast-banner"></div>
 
@@ -1911,24 +1800,6 @@
       /* -----------------------------------------------------------------------
          2. LIVE IST COUNTDOWNS (UTC+05:30)
       ----------------------------------------------------------------------- */
-      window.parseISTToUTC = function(dtLocalStr, fallbackMs) {
-        if (!dtLocalStr || typeof dtLocalStr !== 'string') return fallbackMs;
-        var parts = dtLocalStr.split('T');
-        if (parts.length !== 2) return fallbackMs;
-        var d = parts[0].split('-');
-        var t = parts[1].split(':');
-        if (d.length < 3 || t.length < 2) return fallbackMs;
-        var istOffset = (5 * 60 + 30) * 60 * 1000;
-        return Date.UTC(
-          parseInt(d[0], 10),
-          parseInt(d[1], 10) - 1,
-          parseInt(d[2], 10),
-          parseInt(t[0], 10),
-          parseInt(t[1], 10),
-          0
-        ) - istOffset;
-      };
-
       window.eventTargetsMs = {
         reception: Date.UTC(2026, 11, 2, 19, 0, 0) - ((5 * 60 + 30) * 60 * 1000),
         muhurtham: Date.UTC(2026, 11, 3, 4, 45, 0) - ((5 * 60 + 30) * 60 * 1000)
@@ -2215,54 +2086,7 @@
       };
 
       /* -----------------------------------------------------------------------
-         6. EDIT EVENT DETAILS MODAL
-      ----------------------------------------------------------------------- */
-      window.openEditModal = function() {
-        var modal = document.getElementById('edit-modal');
-        if (modal) modal.classList.add('open');
-      };
-
-      window.closeEditModal = function() {
-        var modal = document.getElementById('edit-modal');
-        if (modal) modal.classList.remove('open');
-      };
-
-      var editForm = document.getElementById('edit-form');
-      if (editForm) {
-        editForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var hostsVal = document.getElementById('input-hosts').value.trim();
-          var groomVal = document.getElementById('input-groom-parents').value.trim();
-          var recVal = document.getElementById('input-rec-dt').value;
-          var muhVal = document.getElementById('input-muh-dt').value;
-
-          if (hostsVal) document.getElementById('display-hosts').textContent = hostsVal;
-          if (groomVal) document.getElementById('display-groom-parents').textContent = groomVal;
-
-          if (recVal) {
-            window.eventTargetsMs.reception = window.parseISTToUTC(recVal, window.eventTargetsMs.reception);
-            document.getElementById('display-rec-text').textContent =
-              new Date(recVal).toLocaleString('en-IN', {
-                weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: '2-digit'
-              }) + " at the Venue";
-          }
-
-          if (muhVal) {
-            window.eventTargetsMs.muhurtham = window.parseISTToUTC(muhVal, window.eventTargetsMs.muhurtham);
-            document.getElementById('display-muh-text').textContent =
-              "On " + new Date(muhVal).toLocaleString('en-IN', {
-                weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: '2-digit'
-              });
-          }
-
-          window.updateCountdowns();
-          window.closeEditModal();
-          window.showToast("Invitation details updated!");
-        });
-      }
-
-      /* -----------------------------------------------------------------------
-         7. GOLDEN PETAL BURST PARTICLES
+         6. GOLDEN PETAL BURST PARTICLES
       ----------------------------------------------------------------------- */
       var canvas = document.getElementById('petal-canvas');
       var ctx = canvas ? canvas.getContext('2d') : null;
@@ -2330,3 +2154,4 @@
   </script>
 </body>
 </html>
+```
