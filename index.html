@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Wedding Invitation — Chi. La. Sou. Venkata Krishnaveni &amp; Chi. Ushanath</title>
+
+  <!-- Google Fonts with safe Georgia / system-ui fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & BASE RESET
+    ========================================================================== */
+    :root {
+      --bg-ivory: #FDFBF7;
+      --burgundy-deep: #2B040A;
+      --burgundy-main: #450A13;
+      --burgundy-light: #63111E;
+      --gold-light: #F3E5AB;
+      --gold-main: #D4AF37;
+      --gold-dark: #A67C1E;
+      --text-dark: #38070E;
+      --text-muted: #6C343D;
+      --font-heading: 'Cinzel', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-color: var(--bg-ivory);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(69, 10, 19, 0.08) 0%, transparent 45%);
+      min-height: 100vh;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    svg.icon-16 {
+      width: 16px !important;
+      height: 16px !important;
+      flex-shrink: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .gold-foil {
+      background: linear-gradient(135deg, #FFF3C4 0%, #D4AF37 45%, #F3E5AB 65%, #B8860B 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: #F3E5AB;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==========================================================================
+       2. GOLDEN PETAL CELEBRATION CANVAS
+    ========================================================================== */
+    #petal-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9500;
+    }
+
+    /* ==========================================================================
+       3. ROYAL WAX-SEAL COVER (#cover-screen)
+    ========================================================================== */
+    #cover-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: radial-gradient(circle at center, #5E0E1A 0%, #2B040A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    #cover-screen.unsealed {
+      opacity: 0;
+      transform: scale(1.03);
+      pointer-events: none;
+    }
+
+    .cover-frame {
+      width: 100%;
+      max-width: 420px;
+      background: linear-gradient(170deg, rgba(69, 10, 19, 0.96) 0%, rgba(35, 3, 8, 0.98) 100%);
+      border: 1.5px solid var(--gold-main);
+      border-radius: 22px;
+      padding: 30px 18px;
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.65),
+        inset 0 0 0 5px rgba(35, 3, 8, 0.9),
+        inset 0 0 0 6px rgba(212, 175, 55, 0.5);
+      pointer-events: none;
+    }
+
+    .cover-mantra {
+      font-family: var(--font-heading);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gold-light);
+    }
+
+    .gold-divider {
+      width: 120px;
+      height: 1.5px;
+      margin: 12px auto;
+      background: linear-gradient(90deg, transparent, var(--gold-main), transparent);
+    }
+
+    .cover-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      background: rgba(0, 0, 0, 0.3);
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .cover-names {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .cover-amp {
+      display: block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--gold-main);
+      margin: 2px 0;
+    }
+
+    .cover-date-pill {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(0, 0, 0, 0.28);
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+    }
+
+    .seal-wrapper {
+      margin: 22px auto 12px;
+      display: flex;
+      justify-content: center;
+      pointer-events: auto;
+    }
+
+    #wax-seal-btn {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 32% 30%, #B81D33 0%, #7C0D1D 58%, #47050E 100%);
+      border: 3px solid var(--gold-main);
+      box-shadow:
+        0 12px 26px rgba(0, 0, 0, 0.65),
+        0 0 0 5px rgba(124, 13, 29, 0.72),
+        0 0 0 7px rgba(212, 175, 55, 0.55);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: sealPulse 2.4s infinite ease-in-out;
+      touch-action: manipulation;
+    }
+
+    #wax-seal-btn * {
+      pointer-events: none;
+    }
+
+    .seal-inner-ring {
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(243, 229, 171, 0.8);
+    }
+
+    .seal-monogram {
+      font-family: var(--font-heading);
+      font-size: 1.38rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+    }
+
+    .seal-sub {
+      font-family: var(--font-heading);
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-top: 2px;
+    }
+
+    @keyframes sealPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    .cover-hint {
+      font-family: var(--font-heading);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--gold-light);
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       4. MAIN INVITATION SHELL (#main-invitation) & STICKY HEADER
+    ========================================================================== */
+    #main-invitation {
+      display: none;
+      opacity: 0;
+      width: 100%;
+      padding-bottom: 40px;
+      transition: opacity 0.5s ease;
+    }
+
+    #main-invitation.visible {
+      display: block;
+      opacity: 1;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      background: var(--burgundy-deep);
+      border-bottom: 1px solid var(--gold-main);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .top-bar-inner {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gold-light);
+      white-space: nowrap;
+    }
+
+    .top-bar-btns {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-pill-outline {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--gold-main);
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .btn-pill-outline {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--gold-main);
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .container-480 {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 14px;
+    }
+
+    .section-space {
+      margin-top: 22px;
+    }
+
+    /* ==========================================================================
+       5. CARD 1: HERO & FAMILY INVITATION CARD
+    ========================================================================== */
+    .ivory-card {
+      width: 100%;
+      background: #FFFDF8;
+      border: 1.5px solid var(--gold-main);
+      border-radius: 20px;
+      padding: 24px 16px;
+      text-align: center;
+      box-shadow:
+        0 10px 26px rgba(69, 10, 19, 0.09),
+        inset 0 0 0 5px #FFFDF8,
+        inset 0 0 0 6px rgba(212, 175, 55, 0.45);
+    }
+
+    .mantra-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--burgundy-main);
+      margin-bottom: 12px;
+    }
+
+    .blessing-line {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.06rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .ribbon-title {
+      display: inline-block;
+      padding: 5px 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2B040A, #5A0D19, #2B040A);
+      border: 1px solid var(--gold-main);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin: 4px 0 12px;
+    }
+
+    .hosts-title {
+      font-family: var(--font-heading);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .invite-prose {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      line-height: 1.48;
+      margin-bottom: 16px;
+    }
+
+    .couple-banner {
+      background: linear-gradient(170deg, #450A13 0%, #2B040A 100%);
+      border: 1.5px solid var(--gold-main);
+      border-radius: 16px;
+      padding: 18px 12px;
+      box-shadow: 0 8px 20px rgba(43, 4, 10, 0.2);
+    }
+
+    .couple-name-lg {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .honorific {
+      font-size: 0.82em;
+      font-weight: 600;
+    }
+
+    .with-word {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin: 4px 0;
+    }
+
+    .groom-parents-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--gold-light);
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       6. CARDS 2 & 3: RECEPTION & SUMUHURTHAM COUNTDOWN CARDS
+    ========================================================================== */
+    .burgundy-card {
+      width: 100%;
+      background: linear-gradient(175deg, #450A13 0%, #2B040A 100%);
+      border: 1.5px solid var(--gold-main);
+      border-radius: 20px;
+      padding: 22px 16px;
+      text-align: center;
+      color: var(--gold-light);
+      box-shadow: 0 12px 28px rgba(43, 4, 10, 0.2);
+    }
+
+    .badge-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    .card-event-title {
+      font-family: var(--font-heading);
+      font-size: 1.32rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .card-event-time {
+      font-family: var(--font-serif);
+      font-size: 1.14rem;
+      font-weight: 600;
+      color: #FFFDF8;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .card-event-lagnam {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--gold-main);
+      margin-bottom: 8px;
+    }
+
+    .card-event-loc {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(243, 229, 171, 0.9);
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .cd-box-wrap {
+      border-top: 1px solid rgba(212, 175, 55, 0.35);
+      padding-top: 14px;
+    }
+
+    .cd-label-top {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    .cd-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .cd-item {
+      background: rgba(18, 2, 5, 0.68);
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 12px;
+      padding: 9px 4px;
+    }
+
+    .cd-num {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.15;
+    }
+
+    .cd-unit {
+      display: block;
+      font-size: 0.54rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(243, 229, 171, 0.78);
+      margin-top: 3px;
+    }
+
+    .btn-calendar-gold {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B8860B 100%);
+      color: var(--burgundy-deep);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ==========================================================================
+       7. CARD 4: BRIDE & GROOM VELVET CURTAIN REVEAL SHOWCASE
+    ========================================================================== */
+    .section-header-center {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-kicker {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 2px;
+    }
+
+    #showcase-card {
+      position: relative;
+      width: 100%;
+      min-height: 550px;
+      border-radius: 20px;
+      border: 1.5px solid var(--gold-main);
+      background: linear-gradient(175deg, #450A13 0%, #2B040A 100%);
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(43, 4, 10, 0.22);
+    }
+
+    /* Curtain Overlay: pointer-events: none on wrapper so scrolling never triggers it */
+    #curtain-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+      text-align: center;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+    }
+
+    #curtain-left,
+    #curtain-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50.5%;
+      background: repeating-linear-gradient(
+        90deg,
+        #480811 0px,
+        #6B101D 16px,
+        #37050C 32px
+      );
+      transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+      pointer-events: none;
+    }
+
+    #curtain-left {
+      left: 0;
+      border-right: 1.5px solid var(--gold-main);
+      box-shadow: 6px 0 22px rgba(0, 0, 0, 0.55);
+    }
+
+    #curtain-right {
+      right: 0;
+      border-left: 1.5px solid var(--gold-main);
+      box-shadow: -6px 0 22px rgba(0, 0, 0, 0.55);
+    }
+
+    .curtain-cta-box {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 330px;
+      pointer-events: none;
+    }
+
+    .curtain-monogram-badge {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-main);
+      background: radial-gradient(circle, #5A0D19 0%, #240307 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--gold-light);
+    }
+
+    .curtain-heading {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .curtain-subtext {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.06rem;
+      color: rgba(243, 229, 171, 0.92);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    /* ONLY the button has pointer-events: auto */
+    #reveal-couple-btn {
+      pointer-events: auto;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B8860B 100%);
+      color: var(--burgundy-deep);
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+      touch-action: manipulation;
+    }
+
+    /* Revealed Showcase Content */
+    #revealed-content {
+      display: none;
+      opacity: 0;
+      padding: 20px 14px 22px;
+      text-align: center;
+      transition: opacity 0.5s ease;
+    }
+
+    #revealed-content.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .revealed-couple-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .revealed-couple-sub {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.98rem;
+      color: rgba(243, 229, 171, 0.88);
+      margin: 2px 0 10px;
+    }
+
+    .btn-close-curtain {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.65);
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .tabs-switcher {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 5px;
+      border-radius: 999px;
+      background: rgba(18, 2, 5, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      margin-bottom: 16px;
+    }
+
+    .tab-btn {
+      padding: 9px 6px;
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--gold-light);
+      line-height: 1.25;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B8860B 100%);
+      color: var(--burgundy-deep);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Tab 1: Horizontal Swipeable 5-Photo Carousel (320px x 420px) */
+    #tab-panel-photos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    #carousel-box {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      height: 420px;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1.5px solid var(--gold-main);
+      background: #220509;
+      overflow: hidden;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.5);
+    }
+
+    .swipe-hint-pill {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 15;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(34, 5, 9, 0.86);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      font-family: var(--font-heading);
+      font-size: 0.54rem;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      pointer-events: none;
+    }
+
+    #slide-index-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 15;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(34, 5, 9, 0.88);
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      pointer-events: none;
+    }
+
+    #carousel-track {
+      display: flex;
+      width: 500%;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+      touch-action: pan-y;
+    }
+
+    .carousel-slide {
+      flex: 0 0 20%;
+      width: 20%;
+      height: 100%;
+      position: relative;
+      background: #220509;
+      overflow: hidden;
+    }
+
+    .slide-iframe-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #220509;
+      pointer-events: none;
+    }
+
+    .slide-img-fg {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      background: #220509;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .nav-arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 12;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(30, 4, 8, 0.9);
+      border: 1.5px solid var(--gold-main);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+    }
+
+    #arrow-prev {
+      left: 8px;
+    }
+
+    #arrow-next {
+      right: 8px;
+    }
+
+    .pagination-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pg-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(243, 229, 171, 0.32);
+      border: 1px solid rgba(212, 175, 55, 0.65);
+      transition: all 0.25s ease;
+    }
+
+    .pg-dot.active {
+      width: 22px;
+      background: linear-gradient(90deg, #F3E5AB, #D4AF37);
+      border-color: var(--gold-light);
+    }
+
+    .media-caption {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.02rem;
+      color: var(--gold-light);
+      text-align: center;
+      margin-top: 10px;
+      max-width: 320px;
+      line-height: 1.4;
+    }
+
+    /* Tab 2: Centered 9:16 Portrait Video Container (270px x 480px) */
+    #tab-panel-video {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .video-box-9x16 {
+      position: relative;
+      width: 270px;
+      height: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1.5px solid var(--gold-main);
+      background: #0D0204;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-iframe-540x960 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 540px;
+      height: 960px;
+      border: 0;
+      transform: scale(0.5);
+      transform-origin: top left;
+      background: #0D0204;
+    }
+
+    /* ==========================================================================
+       8. CARD 5: SACRED DESTINATION • VENUE & DIRECTIONS
+    ========================================================================== */
+    .venue-card {
+      width: 100%;
+      background: #FFFDF8;
+      border: 1.5px solid var(--gold-main);
+      border-radius: 20px;
+      padding: 18px 16px 22px;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(69, 10, 19, 0.09);
+    }
+
+    .map-frame {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      border-radius: 14px;
+      border: 1.5px solid var(--gold-main);
+      background: #F4EBDA;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    #map-zoom-inner {
+      width: 100%;
+      height: 100%;
+      transform-origin: center center;
+      transition: transform 0.25s ease;
+    }
+
+    #map-zoom-inner svg {
+      width: 100%;
+      height: 230px;
+      display: block;
+    }
+
+    .map-zoom-btns {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .zoom-ctrl {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--burgundy-deep);
+      border: 1px solid var(--gold-main);
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .map-coord-tag {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      z-index: 10;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(43, 4, 10, 0.9);
+      border: 1px solid var(--gold-main);
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.54rem;
+      letter-spacing: 0.08em;
+    }
+
+    @keyframes pinPulse {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .pulsing-pin {
+      animation: pinPulse 2.2s infinite ease-in-out;
+    }
+
+    .venue-hall-name {
+      font-family: var(--font-heading);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .venue-full-addr {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      color: var(--text-dark);
+      line-height: 1.42;
+      margin-bottom: 14px;
+    }
+
+    .venue-actions-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 400px) {
+      .venue-actions-row {
+        grid-template-columns: 0.9fr 1.25fr;
+      }
+    }
+
+    .btn-outline-burgundy {
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1.5px solid var(--gold-dark);
+      background: #FFF9EC;
+      color: var(--text-dark);
+      font-family: var(--font-heading);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-solid-burgundy {
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #450A13, #2B040A);
+      border: 1.5px solid var(--gold-main);
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       9. CARD 6: WITH REGARDS FOOTER CARD
+    ========================================================================== */
+    .regards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .regards-box {
+      background: rgba(18, 2, 5, 0.58);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 14px;
+      padding: 14px 10px;
+      font-family: var(--font-heading);
+      font-size: 0.74rem;
+      font-weight: 600;
+      line-height: 1.65;
+      color: var(--gold-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .compliments-footer {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      border-top: 1px solid rgba(212, 175, 55, 0.35);
+      padding-top: 12px;
+      margin-bottom: 10px;
+    }
+
+    .monogram-footer {
+      font-family: var(--font-heading);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--gold-main);
+    }
+
+    /* ==========================================================================
+       10. TOAST NOTIFICATION BANNER
+    ========================================================================== */
+    #toast-banner {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      z-index: 10005;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--burgundy-deep);
+      border: 1.5px solid var(--gold-main);
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      white-space: nowrap;
+      max-width: 92vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #toast-banner.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Celebration Petal Canvas -->
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- =========================================================================
+       1. WAX-SEAL COVER SCREEN (#cover-screen)
+  ========================================================================= -->
+  <div id="cover-screen" onclick="window.unsealInvitation(event)">
+    <div class="cover-frame">
+      <div class="cover-mantra">
+        SRIRASTHU &bull; SUBHAMASTHU &bull; AVIGHNAMASTHU
+      </div>
+      <div class="gold-divider"></div>
+      <div class="cover-tag">WEDDING INVITATION</div>
+
+      <h1 class="cover-names gold-foil">
+        Venkata Krishnaveni
+        <span class="cover-amp">&amp;</span>
+        Ushanath
+      </h1>
+
+      <div class="cover-date-pill">
+        02 &bull; 12 &bull; 2026 &nbsp;|&nbsp; Satyagiri, Annavaram
+      </div>
+
+      <div class="seal-wrapper">
+        <button id="wax-seal-btn" type="button" aria-label="Tap Seal to Unseal Invitation"
+          onclick="window.unsealInvitation(event)">
+          <span class="seal-inner-ring"></span>
+          <span class="seal-monogram">K &amp; U</span>
+          <span class="seal-sub">Unseal</span>
+        </button>
+      </div>
+
+      <p class="cover-hint">TAP SEAL TO UNSEAL INVITATION</p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. MAIN INVITATION BODY (#main-invitation)
+  ========================================================================= -->
+  <main id="main-invitation">
+
+    <!-- Sticky Top Navigation Bar -->
+    <header class="top-bar">
+      <div class="top-bar-inner">
+        <span class="brand-title">K &amp; U WEDDING</span>
+        <div class="top-bar-btns">
+          <button type="button" class="btn-pill-outline" onclick="window.resealInvitation()">
+            <span>Seal View</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-480">
+
+      <!-- =====================================================================
+           CARD 1: HERO & FAMILY INVITATION
+      ===================================================================== -->
+      <section class="section-space">
+        <div class="ivory-card">
+          <div class="mantra-bar">
+            <span>Srirasthu</span>
+            <span>Subhamasthu</span>
+            <span>Avighnamasthu</span>
+          </div>
+
+          <p class="blessing-line">
+            With Divine blessings of Sri U. Nagaraju, Smt. Gangaratnam
+          </p>
+
+          <div class="ribbon-title">Wedding Invitation</div>
+
+          <h2 id="display-hosts" class="hosts-title">
+            Sri U. Venkateswara Rao &amp; Smt. Padmavathi
+          </h2>
+
+          <p class="invite-prose">
+            Cordially Solicit your gracious presence with family and friends on the auspicious occasion of the wedding of our Second daughter
+          </p>
+
+          <div class="couple-banner">
+            <div class="couple-name-lg gold-foil">
+              <span class="honorific">Chi. La. Sou.</span> Venkata Krishnaveni
+            </div>
+            <div class="with-word">with</div>
+            <div class="couple-name-lg gold-foil">
+              <span class="honorific">Chi.</span> Ushanath
+            </div>
+            <p id="display-groom-parents" class="groom-parents-text">
+              ( Younger Son of (Late) Sri Ponnaganti Appala Swamy, (Late) Smt. Tripura Sundari of Visakhapatnam )
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CARD 2: RECEPTION - DINNER & LIVE IST COUNTDOWN
+      ===================================================================== -->
+      <section class="section-space">
+        <article class="burgundy-card">
+          <div class="badge-chip">
+            <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>CELEBRATION &amp; FEAST</span>
+          </div>
+
+          <h3 class="card-event-title">Reception - Dinner</h3>
+          <p id="display-rec-text" class="card-event-time">
+            Wednesday, 2nd December 2026 &bull; From 7:00 p.m. at the Venue
+          </p>
+          <p class="card-event-loc">
+            Vishnu Sadan Hall No. 10, 11, Sri Veera Venkata Satyanarayana Temple Premises, Satyagiri, Annavaram
+          </p>
+
+          <div class="cd-box-wrap">
+            <div class="cd-label-top">COUNTDOWN TO RECEPTION</div>
+            <div class="cd-grid">
+              <div class="cd-item">
+                <span id="rec-days" class="cd-num">--</span>
+                <span class="cd-unit">DAYS</span>
+              </div>
+              <div class="cd-item">
+                <span id="rec-hours" class="cd-num">--</span>
+                <span class="cd-unit">HOURS</span>
+              </div>
+              <div class="cd-item">
+                <span id="rec-mins" class="cd-num">--</span>
+                <span class="cd-unit">MINS</span>
+              </div>
+              <div class="cd-item">
+                <span id="rec-secs" class="cd-num">--</span>
+                <span class="cd-unit">SECS</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-calendar-gold" onclick="window.downloadICS('reception')">
+              <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <span>Add to Calendar (.ics)</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <!-- =====================================================================
+           CARD 3: SUMUHURTHAM & LIVE IST COUNTDOWN
+      ===================================================================== -->
+      <section class="section-space">
+        <article class="burgundy-card">
+          <div class="badge-chip">
+            <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+            <span>AUSPICIOUS MUHURTHAM</span>
+          </div>
+
+          <h3 class="card-event-title">Sumuhurtham</h3>
+          <p id="display-muh-text" class="card-event-time">
+            On Wednesday, 2nd December 2026 Night at 4-45 hrs. (Early hrs. of Thursday)
+          </p>
+          <p class="card-event-lagnam">
+            Uttara Phalguni Nakshtrayukta Tula Lagnam
+          </p>
+          <p class="card-event-loc">
+            Vishnu Sadan Hall No. 10, 11, Sri Veera Venkata Satyanarayana Temple Premises, Satyagiri, Annavaram
+          </p>
+
+          <div class="cd-box-wrap">
+            <div class="cd-label-top">COUNTDOWN TO SUMUHURTHAM</div>
+            <div class="cd-grid">
+              <div class="cd-item">
+                <span id="sum-days" class="cd-num">--</span>
+                <span class="cd-unit">DAYS</span>
+              </div>
+              <div class="cd-item">
+                <span id="sum-hours" class="cd-num">--</span>
+                <span class="cd-unit">HOURS</span>
+              </div>
+              <div class="cd-item">
+                <span id="sum-mins" class="cd-num">--</span>
+                <span class="cd-unit">MINS</span>
+              </div>
+              <div class="cd-item">
+                <span id="sum-secs" class="cd-num">--</span>
+                <span class="cd-unit">SECS</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-calendar-gold" onclick="window.downloadICS('muhurtham')">
+              <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <span>Add to Calendar (.ics)</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <!-- =====================================================================
+           CARD 4: INTERACTIVE BRIDE & GROOM VELVET CURTAIN REVEAL SHOWCASE
+      ===================================================================== -->
+      <section class="section-space">
+        <div class="section-header-center">
+          <span class="section-kicker">A SACRED UNION</span>
+          <h2 class="section-heading">The Bride &amp; Groom</h2>
+        </div>
+
+        <div id="showcase-card">
+          <!-- Locked Velvet Curtain Overlay (Only #reveal-couple-btn has pointer-events: auto) -->
+          <div id="curtain-overlay">
+            <div id="curtain-left"></div>
+            <div id="curtain-right"></div>
+
+            <div class="curtain-cta-box">
+              <div class="curtain-monogram-badge">K &#9829; U</div>
+              <h3 class="curtain-heading">Meet the Couple</h3>
+              <p class="curtain-subtext">
+                Unveil cherished pre-wedding moments &amp; our invitation film
+              </p>
+              <button id="reveal-couple-btn" type="button" onclick="window.revealCouple(event)">
+                &#10024; Reveal the Bride &amp; Groom &#10024;
+              </button>
+            </div>
+          </div>
+
+          <!-- Revealed Showcase Content -->
+          <div id="revealed-content">
+            <h3 class="revealed-couple-title">Venkata Krishnaveni &amp; Ushanath</h3>
+            <p class="revealed-couple-sub">Pre-Wedding Moments &amp; Invitation Film</p>
+            <button type="button" class="btn-close-curtain" onclick="window.closeCurtainShowcase()">
+              <span>&#8635; Close Curtain</span>
+            </button>
+
+            <!-- Media Tabs -->
+            <div class="tabs-switcher">
+              <button id="btn-tab-photos" type="button" class="tab-btn active" onclick="window.switchMediaTab('photos')">
+                &#128248; The Almost-Mrs. &amp; Mr.
+              </button>
+              <button id="btn-tab-video" type="button" class="tab-btn" onclick="window.switchMediaTab('video')">
+                &#127916; A Lifetime Subscription
+              </button>
+            </div>
+
+            <!-- TAB 1: HORIZONTAL SWIPEABLE 5-PHOTO CAROUSEL (320px x 420px) -->
+            <div id="tab-panel-photos">
+              <div id="carousel-box">
+                <span class="swipe-hint-pill">&#8592; Swipe</span>
+                <span id="slide-index-badge">1 / 5</span>
+
+                <button id="arrow-prev" type="button" class="nav-arrow-btn" aria-label="Previous Photo" onclick="window.moveCarousel(-1)">
+                  <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+
+                <button id="arrow-next" type="button" class="nav-arrow-btn" aria-label="Next Photo" onclick="window.moveCarousel(1)">
+                  <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+
+                <div id="carousel-track">
+                  <!-- Photo 1 -->
+                  <div class="carousel-slide">
+                    <iframe
+                      src="https://drive.google.com/file/d/1jpLa_wdpUEUmUqnXaG2hd3JAnZD3AN0f/preview"
+                      class="slide-iframe-bg"
+                      allow="autoplay; fullscreen"
+                      title="Photo 1 Preview">
+                    </iframe>
+                    <img
+                      data-drive-id="1jpLa_wdpUEUmUqnXaG2hd3JAnZD3AN0f"
+                      src="https://drive.google.com/thumbnail?id=1jpLa_wdpUEUmUqnXaG2hd3JAnZD3AN0f&sz=w1200"
+                      alt="Venkata Krishnaveni and Ushanath Photo 1"
+                      class="slide-img-fg"
+                      onload="window.checkDriveImg(this)"
+                      onerror="window.fallbackDriveImg(this)" />
+                  </div>
+
+                  <!-- Photo 2 -->
+                  <div class="carousel-slide">
+                    <iframe
+                      src="https://drive.google.com/file/d/1HwOTE8UCAVah6WKCxsl2VOageTubKNtF/preview"
+                      class="slide-iframe-bg"
+                      allow="autoplay; fullscreen"
+                      title="Photo 2 Preview">
+                    </iframe>
+                    <img
+                      data-drive-id="1HwOTE8UCAVah6WKCxsl2VOageTubKNtF"
+                      src="https://drive.google.com/thumbnail?id=1HwOTE8UCAVah6WKCxsl2VOageTubKNtF&sz=w1200"
+                      alt="Venkata Krishnaveni and Ushanath Photo 2"
+                      class="slide-img-fg"
+                      onload="window.checkDriveImg(this)"
+                      onerror="window.fallbackDriveImg(this)" />
+                  </div>
+
+                  <!-- Photo 3 -->
+                  <div class="carousel-slide">
+                    <iframe
+                      src="https://drive.google.com/file/d/1Iux8dEoAGBE3BZ_y1JKEZLmuSPjRicO-/preview"
+                      class="slide-iframe-bg"
+                      allow="autoplay; fullscreen"
+                      title="Photo 3 Preview">
+                    </iframe>
+                    <img
+                      data-drive-id="1Iux8dEoAGBE3BZ_y1JKEZLmuSPjRicO-"
+                      src="https://drive.google.com/thumbnail?id=1Iux8dEoAGBE3BZ_y1JKEZLmuSPjRicO-&sz=w1200"
+                      alt="Venkata Krishnaveni and Ushanath Photo 3"
+                      class="slide-img-fg"
+                      onload="window.checkDriveImg(this)"
+                      onerror="window.fallbackDriveImg(this)" />
+                  </div>
+
+                  <!-- Photo 4 -->
+                  <div class="carousel-slide">
+                    <iframe
+                      src="https://drive.google.com/file/d/1qwrFXJUS3F9iRolOXI8poAzZivAhsj8D/preview"
+                      class="slide-iframe-bg"
+                      allow="autoplay; fullscreen"
+                      title="Photo 4 Preview">
+                    </iframe>
+                    <img
+                      data-drive-id="1qwrFXJUS3F9iRolOXI8poAzZivAhsj8D"
+                      src="https://drive.google.com/thumbnail?id=1qwrFXJUS3F9iRolOXI8poAzZivAhsj8D&sz=w1200"
+                      alt="Venkata Krishnaveni and Ushanath Photo 4"
+                      class="slide-img-fg"
+                      onload="window.checkDriveImg(this)"
+                      onerror="window.fallbackDriveImg(this)" />
+                  </div>
+
+                  <!-- Photo 5 -->
+                  <div class="carousel-slide">
+                    <iframe
+                      src="https://drive.google.com/file/d/1aRn_kHw44JpE-KK3FawMGItzU5_9wkW6/preview"
+                      class="slide-iframe-bg"
+                      allow="autoplay; fullscreen"
+                      title="Photo 5 Preview">
+                    </iframe>
+                    <img
+                      data-drive-id="1aRn_kHw44JpE-KK3FawMGItzU5_9wkW6"
+                      src="https://drive.google.com/thumbnail?id=1aRn_kHw44JpE-KK3FawMGItzU5_9wkW6&sz=w1200"
+                      alt="Venkata Krishnaveni and Ushanath Photo 5"
+                      class="slide-img-fg"
+                      onload="window.checkDriveImg(this)"
+                      onerror="window.fallbackDriveImg(this)" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5 Gold Pagination Dots -->
+              <div id="pg-dots-row" class="pagination-dots">
+                <button type="button" class="pg-dot active" aria-label="Slide 1" onclick="window.goToSlide(0)"></button>
+                <button type="button" class="pg-dot" aria-label="Slide 2" onclick="window.goToSlide(1)"></button>
+                <button type="button" class="pg-dot" aria-label="Slide 3" onclick="window.goToSlide(2)"></button>
+                <button type="button" class="pg-dot" aria-label="Slide 4" onclick="window.goToSlide(3)"></button>
+                <button type="button" class="pg-dot" aria-label="Slide 5" onclick="window.goToSlide(4)"></button>
+              </div>
+
+              <p id="slide-caption-text" class="media-caption">
+                "1 / 5 — Two souls, one sacred journey beginning in Annavaram"
+              </p>
+            </div>
+
+            <!-- TAB 2: CENTERED 9:16 PORTRAIT VIDEO (270px x 480px scaling 540x960 by 0.5) -->
+            <div id="tab-panel-video" class="hidden">
+              <div class="video-box-9x16">
+                <iframe
+                  src="https://drive.google.com/file/d/1CA7pRce00Zqhy-5FmVP_dRrGk_5HqooT/preview"
+                  width="540"
+                  height="960"
+                  class="video-iframe-540x960"
+                  allow="autoplay; fullscreen"
+                  allowfullscreen
+                  title="A Lifetime Subscription Pre-Wedding Film">
+                </iframe>
+              </div>
+              <p class="media-caption">
+                "A Lifetime Subscription" — Venkata Krishnaveni &amp; Ushanath Pre-Wedding Film
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CARD 5: SACRED DESTINATION • VENUE & DIRECTIONS
+      ===================================================================== -->
+      <section class="section-space">
+        <div class="section-header-center">
+          <span class="section-kicker">SACRED DESTINATION</span>
+          <h2 class="section-heading">Venue &amp; Directions</h2>
+        </div>
+
+        <div class="venue-card">
+          <div class="map-frame">
+            <div class="map-zoom-btns">
+              <button type="button" class="zoom-ctrl" aria-label="Zoom In" onclick="window.zoomMap(0.25)">+</button>
+              <button type="button" class="zoom-ctrl" aria-label="Zoom Out" onclick="window.zoomMap(-0.25)">&minus;</button>
+              <button type="button" class="zoom-ctrl" aria-label="Reset Map" onclick="window.resetMap()">&#8982;</button>
+            </div>
+
+            <div id="map-zoom-inner">
+              <!-- Illustrated Vector Map of Satyagiri Hill, Annavaram -->
+              <svg viewBox="0 0 440 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Satyagiri Hill, Annavaram">
+                <!-- Parchment Terrain -->
+                <rect width="440" height="230" fill="#F4EBDA" />
+
+                <!-- Satyagiri Hill Contours -->
+                <ellipse cx="225" cy="95" rx="145" ry="74" fill="#E8D8B9" opacity="0.65" />
+                <ellipse cx="225" cy="95" rx="98" ry="48" fill="#DEC89E" opacity="0.7" />
+                <ellipse cx="225" cy="95" rx="56" ry="28" fill="#D2B682" opacity="0.75" />
+
+                <!-- Pampa River -->
+                <path d="M 0 185 Q 115 162, 220 186 T 440 174 L 440 230 L 0 230 Z" fill="#C9E2E8" />
+                <path d="M 0 185 Q 115 162, 220 186 T 440 174" fill="none" stroke="#8FBAC6" stroke-width="2" />
+                <text x="58" y="206" fill="#4C7A87" font-family="Georgia, serif" font-style="italic" font-size="11">Pampa River</text>
+
+                <!-- NH-16 Highway -->
+                <path d="M 0 156 L 440 144" fill="none" stroke="#FFFFFF" stroke-width="7" />
+                <path d="M 0 156 L 440 144" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="6 4" />
+                <rect x="20" y="144" width="44" height="16" rx="4" fill="#450A13" />
+                <text x="42" y="155" text-anchor="middle" fill="#F3E5AB" font-family="sans-serif" font-weight="700" font-size="9">NH-16</text>
+
+                <!-- Ghat Road up Satyagiri Hill -->
+                <path d="M 295 148 Q 315 112, 265 98 T 225 86" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+                <path d="M 295 148 Q 315 112, 265 98 T 225 86" fill="none" stroke="#B8860B" stroke-width="1.8" stroke-dasharray="4 3" />
+                <text x="312" y="122" fill="#6C343D" font-family="sans-serif" font-weight="600" font-size="9">Temple Ghat Rd</text>
+
+                <!-- Annavaram Railway Station Marker -->
+                <rect x="332" y="160" width="94" height="22" rx="6" fill="#FFFDF8" stroke="#B8860B" stroke-width="1" />
+                <text x="379" y="174" text-anchor="middle" fill="#38070E" font-family="sans-serif" font-weight="600" font-size="8.5">&#128646; Annavaram Stn</text>
+
+                <!-- Main Temple Gopuram Icon -->
+                <g transform="translate(174, 66)">
+                  <polygon points="14,0 24,14 4,14" fill="#B8860B" />
+                  <rect x="6" y="14" width="16" height="12" fill="#450A13" />
+                  <text x="14" y="36" text-anchor="middle" fill="#450A13" font-family="Georgia, serif" font-weight="700" font-size="8.5">Main Temple</text>
+                </g>
+
+                <!-- Pulsing Pin at Vishnu Sadan Hall No. 10, 11 -->
+                <g class="pulsing-pin" transform="translate(225, 84)">
+                  <circle cx="0" cy="0" r="14" fill="#D4AF37" opacity="0.28" />
+                  <path d="M 0 -24 C -9 -24, -15 -17, -15 -9 C -15 2, 0 12, 0 12 C 0 12, 15 2, 15 -9 C 15 -17, 9 -24, 0 -24 Z" fill="#8B0E21" stroke="#F3E5AB" stroke-width="1.8" />
+                  <circle cx="0" cy="-10" r="4.5" fill="#F3E5AB" />
+                  <rect x="-74" y="-48" width="148" height="20" rx="10" fill="#2B040A" stroke="#D4AF37" stroke-width="1.2" />
+                  <text x="0" y="-35" text-anchor="middle" fill="#F3E5AB" font-family="sans-serif" font-weight="700" font-size="8.8">Vishnu Sadan Hall 10, 11</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="map-coord-tag">Satyagiri, Annavaram &bull; 17.2833&deg; N, 82.3833&deg; E</div>
+          </div>
+
+          <h3 class="venue-hall-name">Vishnu Sadan Hall No. 10, 11</h3>
+          <p class="venue-full-addr">
+            Sri Veera Venkata Satyanarayana Temple Premises, Satyagiri, Annavaram
+          </p>
+
+          <div class="venue-actions-row">
+            <button type="button" class="btn-outline-burgundy" onclick="window.copyVenueAddress()">
+              <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              <span>Copy Address</span>
+            </button>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Vishnu+Sadan+Sri+Veera+Venkata+Satyanarayana+Swamy+Temple+Annavaram"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-solid-burgundy">
+              <svg class="icon-16" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>Get Directions on Google Maps</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CARD 6: WITH REGARDS FOOTER CARD
+      ===================================================================== -->
+      <footer class="section-space">
+        <div class="burgundy-card">
+          <div class="badge-chip">WITH REGARDS</div>
+
+          <div class="regards-grid">
+            <div class="regards-box">
+              <div>Sri P. Saratchandra</div>
+              <div>Sri Ganga Bhavani</div>
+            </div>
+            <div class="regards-box">
+              <div>Sri U. Venkateswara Rao</div>
+              <div>Smt. Padmavathi</div>
+              <div>Chi. Lakshmi Teja</div>
+            </div>
+          </div>
+
+          <p class="compliments-footer">
+            With best compliments from Near &amp; Dear
+          </p>
+
+          <div class="monogram-footer">
+            K &#9829; U &nbsp;&bull;&nbsp; 02.12.2026 &nbsp;&bull;&nbsp; ANNAVARAM
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification Banner -->
+  <div id="toast-banner"></div>
+
+  <!-- =========================================================================
+       SELF-CONTAINED APPLICATION SCRIPT (ALL INTERACTIONS & TIMERS)
+  ========================================================================= -->
+  <script>
+    (function() {
+      /* -----------------------------------------------------------------------
+         1. WAX SEAL UNSEAL / RESEAL
+      ----------------------------------------------------------------------- */
+      window.unsealInvitation = function(evt) {
+        if (evt && evt.preventDefault) evt.preventDefault();
+        if (evt && evt.stopPropagation) evt.stopPropagation();
+
+        var cover = document.getElementById('cover-screen');
+        var main = document.getElementById('main-invitation');
+
+        if (main) {
+          main.style.display = 'block';
+          requestAnimationFrame(function() {
+            main.classList.add('visible');
+            main.style.opacity = '1';
+          });
+        }
+
+        if (cover && !cover.classList.contains('unsealed')) {
+          cover.classList.add('unsealed');
+          setTimeout(function() {
+            cover.style.display = 'none';
+          }, 550);
+        }
+
+        window.burstPetals();
+        window.updateCountdowns();
+      };
+
+      window.resealInvitation = function() {
+        var cover = document.getElementById('cover-screen');
+        var main = document.getElementById('main-invitation');
+        if (cover) {
+          cover.style.display = 'flex';
+          requestAnimationFrame(function() {
+            cover.classList.remove('unsealed');
+          });
+        }
+        if (main) {
+          main.classList.remove('visible');
+          main.style.opacity = '0';
+          setTimeout(function() {
+            main.style.display = 'none';
+          }, 400);
+        }
+      };
+
+      /* -----------------------------------------------------------------------
+         2. LIVE IST COUNTDOWNS (UTC+05:30)
+      ----------------------------------------------------------------------- */
+      window.eventTargetsMs = {
+        reception: Date.UTC(2026, 11, 2, 19, 0, 0) - ((5 * 60 + 30) * 60 * 1000),
+        muhurtham: Date.UTC(2026, 11, 3, 4, 45, 0) - ((5 * 60 + 30) * 60 * 1000)
+      };
+
+      window.updateCountdowns = function() {
+        var now = Date.now();
+        var list = [
+          { prefix: 'rec', target: window.eventTargetsMs.reception },
+          { prefix: 'sum', target: window.eventTargetsMs.muhurtham }
+        ];
+
+        for (var i = 0; i < list.length; i++) {
+          var item = list[i];
+          var diff = Math.max(0, item.target - now);
+          var d = Math.floor(diff / 86400000);
+          var h = Math.floor((diff % 86400000) / 3600000);
+          var m = Math.floor((diff % 3600000) / 60000);
+          var s = Math.floor((diff % 60000) / 1000);
+
+          var dEl = document.getElementById(item.prefix + '-days');
+          var hEl = document.getElementById(item.prefix + '-hours');
+          var mEl = document.getElementById(item.prefix + '-mins');
+          var sEl = document.getElementById(item.prefix + '-secs');
+
+          if (dEl) dEl.textContent = d < 10 ? '0' + d : String(d);
+          if (hEl) hEl.textContent = h < 10 ? '0' + h : String(h);
+          if (mEl) mEl.textContent = m < 10 ? '0' + m : String(m);
+          if (sEl) sEl.textContent = s < 10 ? '0' + s : String(s);
+        }
+      };
+
+      window.updateCountdowns();
+      setInterval(window.updateCountdowns, 1000);
+
+      /* -----------------------------------------------------------------------
+         3. BRIDE & GROOM VELVET CURTAIN REVEAL & MEDIA TABS
+      ----------------------------------------------------------------------- */
+      window.revealCouple = function(evt) {
+        if (evt && evt.preventDefault) evt.preventDefault();
+        if (evt && evt.stopPropagation) evt.stopPropagation();
+
+        var overlay = document.getElementById('curtain-overlay');
+        var left = document.getElementById('curtain-left');
+        var right = document.getElementById('curtain-right');
+        var revealed = document.getElementById('revealed-content');
+        var btn = document.getElementById('reveal-couple-btn');
+
+        if (btn) btn.style.pointerEvents = 'none';
+        if (left) left.style.transform = 'translateX(-105%)';
+        if (right) right.style.transform = 'translateX(105%)';
+
+        if (revealed) {
+          revealed.style.display = 'block';
+          requestAnimationFrame(function() {
+            revealed.classList.add('active');
+            revealed.style.opacity = '1';
+          });
+        }
+
+        if (overlay) {
+          overlay.style.opacity = '0';
+          setTimeout(function() {
+            overlay.style.visibility = 'hidden';
+            overlay.style.display = 'none';
+          }, 700);
+        }
+
+        window.burstPetals();
+      };
+
+      window.closeCurtainShowcase = function() {
+        var overlay = document.getElementById('curtain-overlay');
+        var left = document.getElementById('curtain-left');
+        var right = document.getElementById('curtain-right');
+        var revealed = document.getElementById('revealed-content');
+        var btn = document.getElementById('reveal-couple-btn');
+
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          requestAnimationFrame(function() {
+            overlay.style.opacity = '1';
+            if (left) left.style.transform = 'translateX(0)';
+            if (right) right.style.transform = 'translateX(0)';
+            if (btn) btn.style.pointerEvents = 'auto';
+          });
+        }
+
+        if (revealed) {
+          revealed.classList.remove('active');
+          revealed.style.opacity = '0';
+          setTimeout(function() {
+            revealed.style.display = 'none';
+          }, 400);
+        }
+      };
+
+      window.switchMediaTab = function(tabName) {
+        var pPhotos = document.getElementById('tab-panel-photos');
+        var pVideo = document.getElementById('tab-panel-video');
+        var bPhotos = document.getElementById('btn-tab-photos');
+        var bVideo = document.getElementById('btn-tab-video');
+
+        if (tabName === 'video') {
+          if (pPhotos) pPhotos.classList.add('hidden');
+          if (pVideo) pVideo.classList.remove('hidden');
+          if (bPhotos) bPhotos.classList.remove('active');
+          if (bVideo) bVideo.classList.add('active');
+        } else {
+          if (pVideo) pVideo.classList.add('hidden');
+          if (pPhotos) pPhotos.classList.remove('hidden');
+          if (bVideo) bVideo.classList.remove('active');
+          if (bPhotos) bPhotos.classList.add('active');
+        }
+      };
+
+      /* -----------------------------------------------------------------------
+         4. 5-PHOTO HORIZONTAL SWIPE CAROUSEL & DRIVE IMAGE FALLBACK
+      ----------------------------------------------------------------------- */
+      window.fallbackDriveImg = function(img) {
+        if (!img) return;
+        var id = img.getAttribute('data-drive-id');
+        var stage = parseInt(img.getAttribute('data-stage') || '0', 10);
+        if (id && stage === 0) {
+          img.setAttribute('data-stage', '1');
+          img.src = 'https://lh3.googleusercontent.com/d/' + id + '=w1200';
+        } else {
+          img.style.display = 'none';
+        }
+      };
+
+      window.checkDriveImg = function(img) {
+        if (!img) return;
+        if (!img.naturalWidth || img.naturalWidth <= 10 || !img.naturalHeight || img.naturalHeight <= 10) {
+          window.fallbackDriveImg(img);
+        }
+      };
+
+      var slideCaptions = [
+        '"1 / 5 — Two souls, one sacred journey beginning in Annavaram"',
+        '"2 / 5 — Hand in hand, blessed by tradition and timeless love"',
+        '"3 / 5 — Every smile a promise for our forever together"',
+        '"4 / 5 — Bound by destiny, celebrated with family & friends"',
+        '"5 / 5 — Ready for a lifetime of togetherness"'
+      ];
+      var activeSlide = 0;
+
+      window.goToSlide = function(index) {
+        activeSlide = ((index % 5) + 5) % 5;
+        var track = document.getElementById('carousel-track');
+        var badge = document.getElementById('slide-index-badge');
+        var cap = document.getElementById('slide-caption-text');
+        var dots = document.querySelectorAll('#pg-dots-row .pg-dot');
+
+        if (track) track.style.transform = 'translateX(-' + (activeSlide * 20) + '%)';
+        if (badge) badge.textContent = (activeSlide + 1) + ' / 5';
+        if (cap) cap.textContent = slideCaptions[activeSlide];
+
+        for (var i = 0; i < dots.length; i++) {
+          if (i === activeSlide) dots[i].classList.add('active');
+          else dots[i].classList.remove('active');
+        }
+      };
+
+      window.moveCarousel = function(step) {
+        window.goToSlide(activeSlide + step);
+      };
+
+      // Touch swipe support on #carousel-box
+      var carouselBox = document.getElementById('carousel-box');
+      var touchStartX = 0;
+      if (carouselBox) {
+        carouselBox.addEventListener('touchstart', function(e) {
+          if (e.touches && e.touches.length > 0) {
+            touchStartX = e.touches[0].clientX;
+          }
+        }, { passive: true });
+
+        carouselBox.addEventListener('touchend', function(e) {
+          if (e.changedTouches && e.changedTouches.length > 0) {
+            var dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 36) {
+              window.moveCarousel(dx < 0 ? 1 : -1);
+            }
+          }
+        }, { passive: true });
+      }
+
+      /* -----------------------------------------------------------------------
+         5. VENUE MAP ZOOM, COPY ADDRESS & CALENDAR (.ICS)
+      ----------------------------------------------------------------------- */
+      var currentZoom = 1;
+      window.zoomMap = function(delta) {
+        currentZoom = Math.min(2.2, Math.max(0.85, currentZoom + delta));
+        var inner = document.getElementById('map-zoom-inner');
+        if (inner) inner.style.transform = 'scale(' + currentZoom + ')';
+      };
+
+      window.resetMap = function() {
+        currentZoom = 1;
+        var inner = document.getElementById('map-zoom-inner');
+        if (inner) inner.style.transform = 'scale(1)';
+      };
+
+      window.showToast = function(msg) {
+        var el = document.getElementById('toast-banner');
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add('show');
+        clearTimeout(window._toastTimer);
+        window._toastTimer = setTimeout(function() {
+          el.classList.remove('show');
+        }, 2600);
+      };
+
+      window.copyVenueAddress = function() {
+        var address = "Vishnu Sadan Hall No. 10, 11, Sri Veera Venkata Satyanarayana Temple Premises, Satyagiri, Annavaram";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(address).then(function() {
+            window.showToast("Venue address copied!");
+          }).catch(function() {
+            fallbackCopyText(address);
+          });
+        } else {
+          fallbackCopyText(address);
+        }
+      };
+
+      function fallbackCopyText(text) {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          window.showToast("Venue address copied!");
+        } catch (e) {
+          window.showToast(text);
+        }
+      }
+
+      window.downloadICS = function(kind) {
+        var isRec = kind === 'reception';
+        var title = isRec
+          ? "Reception - Dinner | Venkata Krishnaveni & Ushanath Wedding"
+          : "Sumuhurtham | Venkata Krishnaveni & Ushanath Wedding";
+        var start = isRec ? "20261202T133000Z" : "20261202T231500Z";
+        var end = isRec ? "20261202T163000Z" : "20261203T013000Z";
+        var desc = isRec
+          ? "Reception - Dinner from 7:00 p.m. at Vishnu Sadan Hall No. 10, 11, Sri Veera Venkata Satyanarayana Temple Premises, Satyagiri, Annavaram."
+          : "Sumuhurtham on Wednesday, 2nd December 2026 Night at 4-45 hrs (Early hrs. of Thursday) - Uttara Phalguni Nakshtrayukta Tula Lagnam.";
+        var location = "Vishnu Sadan Hall No. 10, 11, Sri Veera Venkata Satyanarayana Temple Premises, Satyagiri, Annavaram";
+
+        var icsBody = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//Krishnaveni & Ushanath Wedding//EN",
+          "BEGIN:VEVENT",
+          "DTSTART:" + start,
+          "DTEND:" + end,
+          "SUMMARY:" + title,
+          "DESCRIPTION:" + desc,
+          "LOCATION:" + location,
+          "END:VEVENT",
+          "END:VCALENDAR"
+        ].join("\r\n");
+
+        try {
+          var href = "data:text/calendar;charset=utf-8," + encodeURIComponent(icsBody);
+          var a = document.createElement('a');
+          a.href = href;
+          a.download = isRec ? "Reception_Krishnaveni_Ushanath.ics" : "Sumuhurtham_Krishnaveni_Ushanath.ics";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          window.showToast("Calendar invite (.ics) downloaded!");
+        } catch (e) {
+          window.showToast("Saved: Dec 2, 2026 • Annavaram");
+        }
+      };
+
+      /* -----------------------------------------------------------------------
+         6. GOLDEN PETAL BURST PARTICLES
+      ----------------------------------------------------------------------- */
+      var canvas = document.getElementById('petal-canvas');
+      var ctx = canvas ? canvas.getContext('2d') : null;
+      var particles = [];
+
+      function resizePetalCanvas() {
+        if (!canvas) return;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      window.addEventListener('resize', resizePetalCanvas);
+      resizePetalCanvas();
+
+      window.burstPetals = function() {
+        if (!canvas) return;
+        var colors = ['#D4AF37', '#F3E5AB', '#FFF4C8', '#B8860B', '#9E1B32'];
+        for (var i = 0; i < 55; i++) {
+          particles.push({
+            x: canvas.width * 0.5 + (Math.random() - 0.5) * 110,
+            y: canvas.height * 0.45 + (Math.random() - 0.5) * 60,
+            vx: (Math.random() - 0.5) * 8.5,
+            vy: (Math.random() - 0.75) * 9.5,
+            size: 4 + Math.random() * 4,
+            rot: Math.random() * Math.PI * 2,
+            spin: (Math.random() - 0.5) * 0.16,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            alpha: 1
+          });
+        }
+      };
+
+      function animatePetals() {
+        if (ctx && canvas) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          for (var i = particles.length - 1; i >= 0; i--) {
+            var p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.22;
+            p.rot += p.spin;
+            p.alpha -= 0.015;
+
+            if (p.alpha <= 0) {
+              particles.splice(i, 1);
+              continue;
+            }
+
+            ctx.save();
+            ctx.globalAlpha = p.alpha;
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rot);
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+        requestAnimationFrame(animatePetals);
+      }
+
+      animatePetals();
+    })();
+  </script>
+</body>
+</html>
